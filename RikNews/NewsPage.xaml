@@ -1,0 +1,84 @@
+﻿<Page
+    x:Class="RikNews.NewsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:RikNews"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Grid>
+        <Pivot>
+            <PivotItem x:Uid="AllNewsPivot" Margin="0">
+                <ListView
+                    x:Name="AllArticlesList"
+                    ItemClick="ArticlesList_ItemClick"
+                    IsItemClickEnabled="True"
+                    SelectionMode="None"
+                    Loaded="AllArticlesList_Loaded"
+                    ItemTemplate="{StaticResource ArticleBigTemplate}">
+                </ListView>
+            </PivotItem>
+            <PivotItem x:Uid="EconomyPivot" Margin="0">
+                <ListView
+                    x:Name="EconomyArticlesList"
+                    ItemClick="ArticlesList_ItemClick"
+                    IsItemClickEnabled="True"
+                    SelectionMode="None"
+                    Loaded="EconomyArticlesList_Loaded"
+                    ItemTemplate="{StaticResource ArticleBigTemplate}">
+                </ListView>
+            </PivotItem>
+            <PivotItem x:Uid="PoliticsPivot" Margin="0">
+                <ListView
+                    x:Name="PoliticsArticlesList"
+                    ItemClick="ArticlesList_ItemClick"
+                    IsItemClickEnabled="True"
+                    SelectionMode="None"
+                    Loaded="PoliticsArticlesList_Loaded"
+                    ItemTemplate="{StaticResource ArticleBigTemplate}">
+                </ListView>
+            </PivotItem>
+            <PivotItem x:Uid="SocietyPivot" Margin="0">
+                <ListView
+                    x:Name="SocietyArticlesList"
+                    ItemClick="ArticlesList_ItemClick"
+                    IsItemClickEnabled="True"
+                    SelectionMode="None"
+                    Loaded="SocietyArticlesList_Loaded"
+                    ItemTemplate="{StaticResource ArticleBigTemplate}">
+                </ListView>
+            </PivotItem>
+            <PivotItem x:Uid="GreekNewsPivot" Margin="0">
+                <ListView
+                    x:Name="GreekArticlesList"
+                    ItemClick="ArticlesList_ItemClick"
+                    IsItemClickEnabled="True"
+                    SelectionMode="None"
+                    Loaded="GreekArticlesList_Loaded"
+                    ItemTemplate="{StaticResource ArticleBigTemplate}">
+                </ListView>
+            </PivotItem>
+            <PivotItem x:Uid="EuropeanNewsPivot" Margin="0">
+                <ListView
+                    x:Name="EuropeanArticlesList"
+                    ItemClick="ArticlesList_ItemClick"
+                    IsItemClickEnabled="True"
+                    SelectionMode="None"
+                    Loaded="EuropeanArticlesList_Loaded"
+                    ItemTemplate="{StaticResource ArticleBigTemplate}">
+                </ListView>
+            </PivotItem>
+            <PivotItem x:Uid="InternationalNewsPivot" Margin="0">
+                <ListView
+                    x:Name="InternationalArticlesList"
+                    ItemClick="ArticlesList_ItemClick"
+                    IsItemClickEnabled="True"
+                    SelectionMode="None"
+                    Loaded="InternationalArticlesList_Loaded"
+                    ItemTemplate="{StaticResource ArticleBigTemplate}">
+                </ListView>
+            </PivotItem>
+        </Pivot>
+        
+    </Grid>
+</Page>

@@ -1,0 +1,2 @@
+MainPackage=C:\Users\andreas.neofytou\Documents\Visual Studio 2015\RikNews\RikNews\bin\x86\Debug\RikNews_0.1.10.0_x86_Debug.appx
+SymbolPackage=C:\Users\andreas.neofytou\Documents\Visual Studio 2015\RikNews\RikNews\AppPackages\RikNews_0.1.10.0_Debug_Test\RikNews_0.1.10.0_x86_Debug.appxsym

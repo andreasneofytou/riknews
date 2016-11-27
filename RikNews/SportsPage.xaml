@@ -1,0 +1,64 @@
+﻿<Page
+    x:Class="RikNews.SportsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:RikNews"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid>
+        <Pivot>
+            <PivotItem x:Uid="ADivisionPivot" Margin="0">
+                <ListView
+                    x:Name="ADivisionArticlesList"
+                    ItemClick="ArticlesList_ItemClick"
+                    IsItemClickEnabled="True"
+                    SelectionMode="None"
+                    Loaded="ADivisionArticlesList_Loaded"
+                    ItemTemplate="{StaticResource ArticleBigTemplate}">
+                </ListView>
+            </PivotItem>
+            <PivotItem x:Uid="GreekSportsPivot" Margin="0">
+                <ListView
+                    x:Name="GreekSportsArticlesList"
+                    ItemClick="ArticlesList_ItemClick"
+                    IsItemClickEnabled="True"
+                    SelectionMode="None"
+                    Loaded="GreekSportsArticlesList_Loaded"
+                    ItemTemplate="{StaticResource ArticleBigTemplate}">
+                </ListView>
+            </PivotItem>
+            <PivotItem x:Uid="InternationaSportsPivot" Margin="0">
+                <ListView
+                    x:Name="InternationalSportsArticlesList"
+                    ItemClick="ArticlesList_ItemClick"
+                    IsItemClickEnabled="True"
+                    SelectionMode="None"
+                    Loaded="InternationalSportsArticlesList_Loaded"
+                    ItemTemplate="{StaticResource ArticleBigTemplate}">
+                </ListView>
+            </PivotItem>
+            <PivotItem x:Uid="OtherDivisionsPivot" Margin="0">
+                <ListView
+                    x:Name="OtherDivisionsArticlesList"
+                    ItemClick="ArticlesList_ItemClick"
+                    IsItemClickEnabled="True"
+                    SelectionMode="None"
+                    Loaded="OtherDivisionsArticlesList_Loaded"
+                    ItemTemplate="{StaticResource ArticleBigTemplate}">
+                </ListView>
+            </PivotItem>
+            <PivotItem x:Uid="OtherSportsPivot" Margin="0">
+                <ListView
+                    x:Name="OtherSportsArticlesList"
+                    ItemClick="ArticlesList_ItemClick"
+                    IsItemClickEnabled="True"
+                    SelectionMode="None"
+                    Loaded="OtherSportsArticlesList_Loaded"
+                    ItemTemplate="{StaticResource ArticleBigTemplate}">
+                </ListView>
+            </PivotItem>
+        </Pivot>
+    </Grid>
+</Page>
