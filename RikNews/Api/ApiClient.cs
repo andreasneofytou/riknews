@@ -11,19 +11,31 @@ namespace RikNews.Api
 {
     public class ApiClient
     {
-        private static readonly string _topNewsUrl = "http://www.riknews.com.cy/index.php/riknews/itemlist?format=json&moduleID=393";
-        private static readonly string _politicsUrl = "http://www.riknews.com.cy/index.php/news/politiki/itemlist?format=json&moduleID=274";
-        private static readonly string _economyUrl = "http://www.riknews.com.cy/index.php/news/oikonomia/itemlist?format=json&moduleID=281";
-        private static readonly string _societyUrl = "http://www.riknews.com.cy/index.php/news/kinonia/itemlist?format=json&moduleID=282";
-        private static readonly string _greekUrl = "http://www.riknews.com.cy/index.php/news/ellada/itemlist?format=json&moduleID=283";
-        private static readonly string _europeanUrl = "http://www.riknews.com.cy/index.php/news/evropi/itemlist?format=json&moduleID=284";
-        private static readonly string _internationalUrl = "http://www.riknews.com.cy/index.php/news/diethni/itemlist?format=json&moduleID=285";
+        private const string RikBaseUrl = "http://www.riknews.com.cy/index.php/riknews/itemlist?format=json&moduleID=";
+        private static readonly int _topNewsUrl = 393;
+        private static readonly int _politicsUrl = 274;
+        private static readonly int _economyUrl = 281;
+        private static readonly int _societyUrl = 282;
+        private static readonly int _greekUrl = 283;
+        private static readonly int _europeanUrl = 284;
+        private static readonly int _internationalUrl = 285;
+        private static readonly int _culture = 441;
+        private static readonly int _health = 442;
+        private static readonly int _environment = 443;
+        private static readonly int _science = 444;
+        private static readonly int _art = 447;
+        private static readonly int _exclusives = 497;
+        private static readonly int _rikInAction = 498;
+        private static readonly int _analysis = 498;
 
-        private static readonly string _aDivisionSportsUrl = "http://www.riknews.com.cy/index.php/sports/a-katigoria/itemlist?format=json&moduleID=341";        
-        private static readonly string _greekSportsUrl = "http://www.riknews.com.cy/index.php/sports/greece/itemlist?format=json&moduleID=342";
-        private static readonly string _internationalSportsUrl = "http://www.riknews.com.cy/index.php/sports/diethni/itemlist?format=json&moduleID=343";
-        private static readonly string _otherDivisionsUrl = "http://www.riknews.com.cy/index.php/sports/mikres-katigories/itemlist?format=json&moduleID=344";
-        private static readonly string _otherSportssUrl = "http://www.riknews.com.cy/index.php/sports/alla-athlimata/itemlist?format=json&moduleID=373";
+        private static readonly int _aDivisionSportsUrl = 341;        
+        private static readonly int _greekSportsUrl = 342;
+        private static readonly int _internationalSportsUrl = 343;
+        private static readonly int _otherDivisionsUrl = 344;
+        private static readonly int _otherSportssUrl = 373;
+        private static readonly int _cars = 412;
+        private static readonly int _championsLeague = 413;
+        private static readonly int _europaLeague = 414;
 
         private static readonly string _vodUrl = "http://www.cybc-media.com/vod2/media/jmsmusic/tmp/xml/video-playlist.xml";
         private static readonly string _aodUrl = " http://www.cybc-media.com/aod2/media/jmsmusic/tmp/xml/audio-playlist.xml";       
@@ -98,10 +110,11 @@ namespace RikNews.Api
             return await GetMedia(_aodUrl);
         }
 
-        private async static Task<List<Article>> GetArticles(string url)
+        private async static Task<List<Article>> GetArticles(int moduleId)
         {
             HttpClient client = new HttpClient();
             List<Article> list = new List<Article>();
+            string url = RikBaseUrl + moduleId;
             using (HttpResponseMessage response = await client.GetAsync(new Uri(url, UriKind.Absolute)))
             {
                 if (response.IsSuccessStatusCode)
